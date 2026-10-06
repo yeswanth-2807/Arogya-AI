@@ -1,0 +1,106 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply font-sans antialiased bg-slate-50 text-slate-900 transition-colors duration-200;
+}
+
+.dark body {
+  background-color: #0B132B;
+  color: #F1F5F9;
+}
+
+/* ── Light / Dark Mode Hospital Cards ───────────────────────────────────── */
+.hospital-card {
+  background: #ffffff;
+  border: 1px solid #E2E8F0;
+  border-radius: 1rem;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.dark .hospital-card {
+  background: #1C2541;
+  border-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.hospital-card-hover {
+  @apply hospital-card hover:shadow-lg hover:border-sky-400 hover:-translate-y-0.5;
+}
+
+.dark .hospital-card-hover:hover {
+  border-color: #38BDF8;
+  box-shadow: 0 0 25px rgba(56, 189, 248, 0.2);
+}
+
+.badge-emergency {
+  background-color: #FEF2F2;
+  color: #DC2626;
+  border: 1px solid #FCA5A5;
+}
+
+.dark .badge-emergency {
+  background-color: rgba(220, 38, 38, 0.2);
+  color: #F87171;
+  border-color: rgba(239, 68, 68, 0.4);
+}
+
+.badge-available {
+  background-color: #F0FDF4;
+  color: #166534;
+  border: 1px solid #86EFAC;
+}
+
+.dark .badge-available {
+  background-color: rgba(16, 185, 129, 0.2);
+  color: #34D399;
+  border-color: rgba(52, 211, 153, 0.4);
+}
+
+.badge-specialty {
+  background-color: #F0F9FF;
+  color: #0369A1;
+  border: 1px solid #BAE6FD;
+}
+
+.dark .badge-specialty {
+  background-color: rgba(56, 189, 248, 0.2);
+  color: #7DD3FC;
+  border-color: rgba(56, 189, 248, 0.4);
+}
+
+/* ── Custom Scrollbar ────────────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #F1F5F9; }
+.dark ::-webkit-scrollbar-track { background: #0B132B; }
+::-webkit-scrollbar-thumb { background: #CBD5E1; border-radius: 9999px; }
+.dark ::-webkit-scrollbar-thumb { background: #334155; }
+
+/* HIDE GOOGLE TRANSLATE BANNER AGGRESSIVELY */
+.VIpgJd-Zvi9od-ORHb-OEVmcd,
+.goog-te-banner-frame,
+.goog-te-balloon-frame,
+#goog-gt-tt,
+.goog-tooltip,
+iframe.skiptranslate {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+body {
+  top: 0px !important;
+  margin-top: 0px !important;
+  position: static !important;
+}
+
+.goog-text-highlight {
+  background-color: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
